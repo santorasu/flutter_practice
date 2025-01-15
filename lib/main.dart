@@ -14,70 +14,85 @@ home: SafeArea(
       ),),
       centerTitle: true,
     ),
-    body: Center(
-      child: Column(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Text 1",
-              style:TextStyle(
-                fontSize: 25,
-                color: Colors.deepPurple
-              )),
+    body: Container(
 
-              Text("Text 2",
-                  style:TextStyle(
-                      fontSize: 25,
-                      color: Colors.deepPurple
-                  )),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("R1",style: TextStyle(fontSize: 25),),
+                  Text("R2",style: TextStyle(fontSize: 25),),
+                  Text("R3",style: TextStyle(fontSize: 25),),
+                  Text("R4",style: TextStyle(fontSize: 25),),
+                  Text("R5",style: TextStyle(fontSize: 25),),
 
-              Text("Text 3",
-                  style:TextStyle(
-                      fontSize: 25,
-                      color: Colors.deepPurple
-                  )),
+                  Text("R1",style: TextStyle(fontSize: 25),),
+                  Text("R2",style: TextStyle(fontSize: 25),),
+                  Text("R3",style: TextStyle(fontSize: 25),),
+                  Text("R4",style: TextStyle(fontSize: 25),),
+                  Text("R5",style: TextStyle(fontSize: 25),),
 
-              Text("Text 4",
-                  style:TextStyle(
-                      fontSize: 25,
-                      color: Colors.deepPurple
-                  )),
-            ],
-          ),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text("Text 1",
-                        style:TextStyle(
-                            fontSize: 25,
-                            color: Colors.deepPurple
-                        )),
+                  Text("R1",style: TextStyle(fontSize: 25),),
+                  Text("R2",style: TextStyle(fontSize: 25),),
+                  Text("R3",style: TextStyle(fontSize: 25),),
+                  Text("R4",style: TextStyle(fontSize: 25),),
+                  Text("R5",style: TextStyle(fontSize: 25),),
+                ],
+              ),
+            ),
+        
+            Text("A",style: TextStyle(fontSize: 25),),
+            Text("B",style: TextStyle(fontSize: 25),),
+            Text("C",style: TextStyle(fontSize: 25),),
+            Text("D",style: TextStyle(fontSize: 25),),
+            Text("E",style: TextStyle(fontSize: 25),),
 
-                    Text("Text 2",
-                        style:TextStyle(
-                            fontSize: 25,
-                            color: Colors.deepPurple
-                        )),
+            Text("A",style: TextStyle(fontSize: 25),),
+            Text("B",style: TextStyle(fontSize: 25),),
+            Text("C",style: TextStyle(fontSize: 25),),
+            Text("D",style: TextStyle(fontSize: 25),),
+            Text("E",style: TextStyle(fontSize: 25),),
 
-                    Text("Text 3",
-                        style:TextStyle(
-                            fontSize: 25,
-                            color: Colors.deepPurple
-                        )),
+            Text("A",style: TextStyle(fontSize: 25),),
+            Text("B",style: TextStyle(fontSize: 25),),
+            Text("C",style: TextStyle(fontSize: 25),),
+            Text("D",style: TextStyle(fontSize: 25),),
+            Text("E",style: TextStyle(fontSize: 25),),
 
-                    Text("Text 4",
-                        style:TextStyle(
-                            fontSize: 25,
-                            color: Colors.deepPurple
-                        )),
-                  ],
-                ),
-              )
-
-
-        ],
+            Text("A",style: TextStyle(fontSize: 25),),
+            Text("B",style: TextStyle(fontSize: 25),),
+            Text("C",style: TextStyle(fontSize: 25),),
+            Text("D",style: TextStyle(fontSize: 25),),
+            Text("E",style: TextStyle(fontSize: 25),),
+            Text("A",style: TextStyle(fontSize: 25),),
+            Text("B",style: TextStyle(fontSize: 25),),
+            Text("C",style: TextStyle(fontSize: 25),),
+            Text("D",style: TextStyle(fontSize: 25),),
+            Text("E",style: TextStyle(fontSize: 25),),
+            Text("A",style: TextStyle(fontSize: 25),),
+            Text("B",style: TextStyle(fontSize: 25),),
+            Text("C",style: TextStyle(fontSize: 25),),
+            Text("D",style: TextStyle(fontSize: 25),),
+            Text("E",style: TextStyle(fontSize: 25),),
+           ElevatedButton(
+               style: ElevatedButton.styleFrom(
+                 backgroundColor: Colors.deepOrange,
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(30)
+                 )
+               )
+               ,onPressed: (){
+             print("I am a button");
+           },
+               child: Text("Click"))
+          ],
+        ),
       ),
     )
   ),

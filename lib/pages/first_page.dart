@@ -1,68 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/pages/second_page.dart';
+import 'package:test_app/pages/home_page.dart';
+import 'package:test_app/pages/profile_page.dart';
+import 'package:test_app/pages/setting_page.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+
+class FirstPage extends StatefulWidget {
+   FirstPage({super.key});
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+   int _selectedIndex = 0;
+
+   void _navigationBottomBar(int index){
+     setState(() {
+       _selectedIndex = index;
+     });
+     }
+
+
+  final List _pages = [
+    HomePage(),
+    ProfilePage(),
+    SettingPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("First Page"),
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.deepPurple,
-        child: Column(
-          children: [
-            const DrawerHeader(child: Text("This is header Drawer",style: TextStyle(fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color:  Colors.white),)),
-            ListTile(
-              leading: const Icon(Icons.home,size: 30,color: Colors.white,),
-              title: const Text("H O M E",style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-              ),
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const FirstPage()));
-            }, ),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _navigationBottomBar,
+          items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),
+        label: 'Home'),
 
-            const ListTile(
-              leading: Icon(Icons.settings,size: 30,color: Colors.white,),
-              title: Text("S E T T I N G S",style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),),
-            ),
-          ],
-        ),
-      ),
-      body: Column(
-        children: [
-          Container(
-            child: const Center(
-              child: Text("First Page",
-              style: TextStyle(
-                color: Colors.blueAccent,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),),
-            ),
-          ),
-          ElevatedButton(onPressed: (){
-            print("Go to Second page");
-           Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondPage()));
+        BottomNavigationBarItem(icon: Icon(Icons.person),
+            label: 'Profile'),
+        BottomNavigationBarItem(icon: Icon(Icons.settings),
+            label: 'Settings')
+      ]),
 
-          }, child: const Text("Go to Second Page",style: TextStyle(
-            color: Colors.blueAccent,
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),))
-        ],
-      ),
     );
   }
 }

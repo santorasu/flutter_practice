@@ -32,7 +32,7 @@ class _FirstPageState extends State<FirstPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("First Page"),
+        title: const Text("Unlock Algorithm"),
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

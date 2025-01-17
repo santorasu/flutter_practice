@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:  FirstPage(),
+      theme: ThemeData(primarySwatch: Colors.yellow),
       routes: {
         "/firstpage":(context) => FirstPage(),
         "/homepage":(context) =>  HomePage(),
